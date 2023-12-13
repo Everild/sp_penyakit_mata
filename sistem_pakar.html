@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnosa Penyakit Mata</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .result {
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4caf50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Diagnosa Penyakit Mata</h1>
+
+  <form id="diagnosisForm">
+    <label for="gejala1">1. Kabur saat melihat jauh:</label>
+    <select id="gejala1">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <label for="gejala2">2. Kabur jika melihat dekat:</label>
+    <select id="gejala2">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <label for="gejala3">3. Kadang sakit leher:</label>
+    <select id="gejala3">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <label for="gejala4">4. Kadang sakit kepala:</label>
+    <select id="gejala4">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <label for="gejala5">5. Mata Pegal:</label>
+    <select id="gejala5">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <label for="gejala6">6. Kadang muntah muntah:</label>
+    <select id="gejala6">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <label for="gejala7">7. Mata merah:</label>
+    <select id="gejala7">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <label for="gejala8">8. Keluar kotoran berupa belekan:</label>
+    <select id="gejala8">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <label for="gejala9">9. Tidak nyeri:</label>
+    <select id="gejala9">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <label for="gejala10">10. Tidak Silau:</label>
+    <select id="gejala10">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <label for="gejala11">11. Berasa ada debu di mata:</label>
+    <select id="gejala11">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <label for="gejala12">12. Sering berair:</label>
+    <select id="gejala12">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <label for="gejala13">13. Seperti ada sensasi benda asing:</label>
+    <select id="gejala13">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <label for="gejala14">14. Kadang-kadang disertai kabur:</label>
+    <select id="gejala14">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <label for="gejala15">15. Kadang-kadang disertai nyeri:</label>
+    <select id="gejala15">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <label for="gejala16">16. mata terasa Kabur:</label>
+    <select id="gejala16">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <label for="gejala17">17. Penglihatan seperti ada asap/kabut:</label>
+    <select id="gejala17">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <label for="gejala18">18. Silau:</label>
+    <select id="gejala18">
+      <option value="1">Sangat Yakin</option>
+      <option value="0.8">Yakin</option>
+      <option value="0.6">Cukup Yakin</option>
+      <option value="0.4">Sedikit Yakin</option>
+      <option value="0.2">Kurang Yakin</option>
+      <option value="0">Tidak Yakin</option>
+    </select>
+
+    <!-- Tambahkan gejala dan penyakit berikutnya sesuai kebutuhan -->
+    <!-- Contoh Penambahan Gejala dan Penyakit -->
+    
+
+    <!-- ... Tambahkan gejala dan penyakit lainnya ... -->
+
+    <button type="button" onclick="hitungCF()">Diagnosa</button>
+  </form>
+
+  <div class="result" id="result">
+    <!-- Hasil diagnosa akan ditampilkan di sini -->
+  </div>
+
+  <script>
+    function hitungCF() {
+      // Ambil nilai gejala dari formulir
+      const gejala1 = parseFloat(document.getElementById('gejala1').value);
+      const gejala2 = parseFloat(document.getElementById('gejala2').value);
+      const gejala3 = parseFloat(document.getElementById('gejala3').value);
+      const gejala4 = parseFloat(document.getElementById('gejala4').value);
+      const gejala5 = parseFloat(document.getElementById('gejala5').value);
+      const gejala6 = parseFloat(document.getElementById('gejala6').value);
+      const gejala7 = parseFloat(document.getElementById('gejala7').value);
+      const gejala8 = parseFloat(document.getElementById('gejala8').value);
+      const gejala9 = parseFloat(document.getElementById('gejala9').value);
+      const gejala10 = parseFloat(document.getElementById('gejala10').value);
+      const gejala11 = parseFloat(document.getElementById('gejala11').value);
+      const gejala12 = parseFloat(document.getElementById('gejala12').value);
+      const gejala13 = parseFloat(document.getElementById('gejala13').value);
+      const gejala14 = parseFloat(document.getElementById('gejala14').value);
+      const gejala15 = parseFloat(document.getElementById('gejala15').value);
+      const gejala16 = parseFloat(document.getElementById('gejala16').value);
+      const gejala17 = parseFloat(document.getElementById('gejala17').value);
+      const gejala18 = parseFloat(document.getElementById('gejala18').value);
+      // ... Ambil nilai gejala lainnya ...
+
+      // Definisi nilai MB dan MD untuk setiap gejala dan penyakit
+      const mbGejala1 = 1;
+      const mdGejala1 = 0;
+
+      const mbGejala2 = 1;
+      const mdGejala2 = 0;
+
+      const mbGejala3 = 0.8;
+      const mdGejala3 = 0.2;
+
+      const mbGejala4 = 0.8;
+      const mdGejala4 = 0.2;
+
+      const mbGejala5 = 0.8;
+      const mdGejala5 = 0.4;
+
+      const mbGejala6 = 0.8;
+      const mdGejala6 = 0.4;
+      
+      const mbGejala7 = 1;
+      const mdGejala7 = 0;
+
+      const mbGejala8 = 1;
+      const mdGejala8 = 0;
+
+      const mbGejala9 = 0.8;
+      const mdGejala9 = 0.2;
+
+      const mbGejala10 = 0.8;
+      const mdGejala10 = 0.2;
+
+      const mbGejala11 = 0.8;
+      const mdGejala11 = 0.2;
+
+      const mbGejala12 = 0.8;
+      const mdGejala12 = 0.4;
+
+      const mbGejala13 = 1;
+      const mdGejala13 = 0.2;
+
+      const mbGejala14 = 1;
+      const mdGejala14 = 0.2;
+
+      const mbGejala15 = 0.8;
+      const mdGejala15 = 0.2;
+
+      const mbGejala16 = 1;
+      const mdGejala16 = 0.2;
+
+      const mbGejala17 = 1;
+      const mdGejala17 = 0.2;
+
+      const mbGejala18 = 1;
+      const mdGejala18 = 0.2;
+
+      // ... Definisi nilai MB dan MD untuk gejala lainnya dan penyakit lainnya ...
+
+      // Hitung nilai CF pakar
+      const cfPakar1 = mbGejala1 - mdGejala1;
+      const cfPakar2 = mbGejala2 - mdGejala2;
+      const cfPakar3 = mbGejala3 - mdGejala3;
+      const cfPakar4 = mbGejala4 - mdGejala4;
+      const cfPakar5 = mbGejala5 - mdGejala5;
+      const cfPakar6 = mbGejala6 - mdGejala6;
+      const cfPakar7 = mbGejala7 - mdGejala7;
+      const cfPakar8 = mbGejala8 - mdGejala8;
+      const cfPakar9 = mbGejala9 - mdGejala9;
+      const cfPakar10 = mbGejala10 - mdGejala10;
+      const cfPakar11 = mbGejala11 - mdGejala11;
+      const cfPakar12 = mbGejala12 - mdGejala12;
+      const cfPakar13 = mbGejala13 - mdGejala13;
+      const cfPakar14 = mbGejala14 - mdGejala14;
+      const cfPakar15 = mbGejala15 - mdGejala15;
+      const cfPakar16 = mbGejala16 - mdGejala16;
+      const cfPakar17 = mbGejala17 - mdGejala17;
+      const cfPakar18 = mbGejala18 - mdGejala18;
+
+      // ... (unchanged code for getting user input and defining user's CF values)
+      const cfh1 =cfPakar1 * gejala1;
+      const cfh2 =cfPakar2 * gejala2;
+      const cfh3 =cfPakar3 * gejala3;
+      const cfh4 =cfPakar4 * gejala4;
+      const cfh5 =cfPakar5 * gejala5;
+      const cfh6 =cfPakar6 * gejala6;
+      const cfh7 =cfPakar7 * gejala7;
+      const cfh8 =cfPakar8 * gejala8;
+      const cfh9 =cfPakar9 * gejala9;
+      const cfh10=cfPakar10 * gejala10;
+      const cfh11=cfPakar11 * gejala11;
+      const cfh12=cfPakar12 * gejala12;
+      const cfh13=cfPakar13 * gejala13;
+      const cfh14=cfPakar14 * gejala14;
+      const cfh15=cfPakar15 * gejala15;
+      const cfh16=cfPakar16 * gejala16;
+      const cfh17=cfPakar17 * gejala17;
+      const cfh18=cfPakar18 * gejala18;
+
+      // Hitung nilai CF kombinasi
+      //penyakit 1
+      const cfold1 = cfh1 + cfh3 * (1-(cfh1));
+      const cfold2 = cfold1 + cfh4 * (1-(cfold1));
+      const cfold3 = cfold2 + cfh5 * (1-(cfold2));
+      const cfp1 = cfold3 * 100;
+
+      //penyakit 2
+      const cfold4 = cfh1 + cfh2 * (1-(cfh1));
+      const cfold5 = cfold4 + cfh3 * (1-(cfold4));
+      const cfold6 = cfold5 + cfh4 * (1-(cfold5));
+      const cfold7 = cfold6 + cfh5 * (1-(cfold6));
+      const cfold8 = cfold7 + cfh6 * (1-(cfold7));
+      const cfp2 = cfold8 * 100;
+
+      //penyakit 3
+      const cfold9 = cfh7 + cfh8 * (1-(cfh7));
+      const cfold10 = cfold9 + cfh9 * (1-(cfold9));
+      const cfold11 = cfold10 + cfh10 * (1-(cfold10));
+      const cfp3 = cfold11 * 100;
+
+      //penyakit 4
+      const cfold12 = cfh11 + cfh12 * (1-(cfh11));
+      const cfold13 = cfold12 + cfh13 * (1-(cfold12));
+      const cfold14 = cfold13 + cfh14 * (1-(cfold13));
+      const cfold15 = cfold14 + cfh15 * (1-(cfold14));
+      const cfp4 = cfold15 * 100;
+
+      //penyakit 5
+      const cfold16 = cfh16 + cfh17 * (1-(cfh16));
+      const cfold17 = cfold16 + cfh18 * (1-(cfold16));
+      const cfp5 = cfold17 * 100;
+
+      // Menentukan Jenis Penyakit
+      const hasilDiagnosa = {
+        'Mata Minus': cfp1,
+        'Mata Plus': cfp2,
+        'Kunjungtivitis': cfp3,
+        'Mata Kering': cfp4,
+        'Katarak': cfp5
+      };
+      
+      // Tampilkan hasil diagnosa
+      const resultElement = document.getElementById('result');
+      resultElement.innerHTML = '<h2>Hasil Diagnosa:</h2>';
+      
+      // Mengurutkan penyakit berdasarkan persentase tertinggi
+      const sortedDiagnosa = Object.entries(hasilDiagnosa).sort((a, b) => b[1] - a[1]);
+      
+      // Menampilkan 5 penyakit dengan presentase tertinggi
+      for (let i = 0; i < sortedDiagnosa.length; i++) {
+        const [penyakit, nilai] = sortedDiagnosa[i];
+        
+        // Konversi nilai CF menjadi bentuk persentase
+        const persenNilai = (nilai).toFixed(2);
+      
+        resultElement.innerHTML += `<p>${penyakit}: ${persenNilai}%</p>`;
+      }
+    }
+  </script>
+
+</body>
+</html>
